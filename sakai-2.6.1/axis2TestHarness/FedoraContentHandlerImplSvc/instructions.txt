@@ -1,0 +1,6 @@
+1) set eclipse build jre lib jdk 1.5
+2) build.xml run as ant build
+3) copy C:\WorkDir\FedoraContentHandlerImplSvc\Axis2runtime_lib_folder\*.*   to C:\WorkDir\FedoraContentHandlerImplSvc\Axis2runtime_lib_folder  (AXIS2 apache war mode)
+4) via http://383509-vm-java:8080/axis2/axis2-admin/    upload new service (browse  .aar  from C:\axis2-1.5.4\repository\services    or (build target folder))
+5) Create a new SOAP UI project for http://383509-vm-java:8080/axis2/services/FedoraDigitalRepositoryImplTestSvc?wsdl
+

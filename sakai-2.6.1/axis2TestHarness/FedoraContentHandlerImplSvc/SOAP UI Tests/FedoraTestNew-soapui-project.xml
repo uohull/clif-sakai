@@ -1,0 +1,1195 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project name="FedoraTestNew" resourceRoot="" soapui-version="3.0.1" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" wsaVersion="NONE" name="FedoraDigitalRepositoryImplTestSvcSoap12Binding" type="wsdl" bindingName="{http://fedora.impl.ral.uhi.ac.uk}FedoraDigitalRepositoryImplTestSvcSoap12Binding" soapVersion="1_2" anonymous="optional" definition="http://383509-vm-java:8080/axis2/services/FedoraDigitalRepositoryImplTestSvc?wsdl" id="43927b9e-10bb-4607-a237-5026432c3ffa" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://383509-vm-java:8080/axis2/services/FedoraDigitalRepositoryImplTestSvc?wsdl"><con:part><con:url>http://383509-vm-java:8080/axis2/services/FedoraDigitalRepositoryImplTestSvc?wsdl</con:url><con:content><![CDATA[<wsdl:definitions targetNamespace="http://fedora.impl.ral.uhi.ac.uk" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:ax219="http://ral.uhi.ac.uk/xsd" xmlns:ns1="http://org.apache.axis2/xsd" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:ns="http://fedora.impl.ral.uhi.ac.uk" xmlns:ax216="http://util.java/xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ax215="http://fedora.impl.ral.uhi.ac.uk/xsd">
+  <wsdl:documentation>FedoraDigitalRepositoryImplTestSvc</wsdl:documentation>
+  <wsdl:types>
+    <xs:schema attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://fedora.impl.ral.uhi.ac.uk/xsd" xmlns:ax217="http://util.java/xsd">
+      <xs:import namespace="http://util.java/xsd"/>
+      <xs:complexType name="FedoraDigitalRepositoryImpl">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="repoConfig" nillable="true" type="ax217:PropertyResourceBundle"/>
+        </xs:sequence>
+      </xs:complexType>
+    </xs:schema>
+    <xs:schema attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://util.java/xsd">
+      <xs:complexType name="ResourceBundle">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="keys" nillable="true" type="ax216:Enumeration"/>
+          <xs:element minOccurs="0" name="locale" nillable="true" type="ax216:Locale"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="Enumeration">
+        <xs:sequence/>
+      </xs:complexType>
+      <xs:complexType name="Locale">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ISO3Country" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="ISO3Language" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="country" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="displayCountry" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="displayLanguage" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="displayName" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="displayVariant" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="language" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="variant" nillable="true" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="PropertyResourceBundle">
+        <xs:complexContent>
+          <xs:extension base="ax216:ResourceBundle">
+            <xs:sequence>
+              <xs:element minOccurs="0" name="keys" nillable="true" type="ax216:Enumeration"/>
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+    </xs:schema>
+    <xs:schema attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://fedora.impl.ral.uhi.ac.uk" xmlns:ax221="http://ral.uhi.ac.uk/xsd" xmlns:ax218="http://fedora.impl.ral.uhi.ac.uk/xsd">
+      <xs:import namespace="http://fedora.impl.ral.uhi.ac.uk/xsd"/>
+      <xs:import namespace="http://ral.uhi.ac.uk/xsd"/>
+      <xs:element name="setTruststorePath">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="truststorePath" nillable="true" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="setTruststorePassword">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="truststorePassword" nillable="true" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="setKeystorePath">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="keystorePath" nillable="true" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="setKeystorePassword">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="keystorePassword" nillable="true" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="setFedoraDigitalRepositoryImpl">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="repo" nillable="true" type="ax215:FedoraDigitalRepositoryImpl"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="setDebugOutputPath">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="debugOutputPath" nillable="true" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="setDebug">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="debug" type="xs:boolean"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="invokeTestHarnessMethod">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="testMethodName" nillable="true" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="invokeTestHarnessMethodResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="return" nillable="true" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getFedoraDigitalRepositoryImplResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="return" nillable="true" type="ax215:FedoraDigitalRepositoryImpl"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getDebugOutputPathResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="return" nillable="true" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="createResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="return" nillable="true" type="ax221:DigitalRepository"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:schema>
+    <xs:schema attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://ral.uhi.ac.uk/xsd" xmlns:ax220="http://util.java/xsd">
+      <xs:import namespace="http://util.java/xsd"/>
+      <xs:complexType name="DigitalRepository">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="repoConfig" nillable="true" type="ax220:PropertyResourceBundle"/>
+        </xs:sequence>
+      </xs:complexType>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="setKeystorePasswordRequest">
+    <wsdl:part name="parameters" element="ns:setKeystorePassword"/>
+  </wsdl:message>
+  <wsdl:message name="getFedoraDigitalRepositoryImplRequest"/>
+  <wsdl:message name="getFedoraDigitalRepositoryImplResponse">
+    <wsdl:part name="parameters" element="ns:getFedoraDigitalRepositoryImplResponse"/>
+  </wsdl:message>
+  <wsdl:message name="setTruststorePasswordRequest">
+    <wsdl:part name="parameters" element="ns:setTruststorePassword"/>
+  </wsdl:message>
+  <wsdl:message name="setKeystorePathRequest">
+    <wsdl:part name="parameters" element="ns:setKeystorePath"/>
+  </wsdl:message>
+  <wsdl:message name="setTruststorePathRequest">
+    <wsdl:part name="parameters" element="ns:setTruststorePath"/>
+  </wsdl:message>
+  <wsdl:message name="setDebugOutputPathRequest">
+    <wsdl:part name="parameters" element="ns:setDebugOutputPath"/>
+  </wsdl:message>
+  <wsdl:message name="getDebugOutputPathRequest"/>
+  <wsdl:message name="getDebugOutputPathResponse">
+    <wsdl:part name="parameters" element="ns:getDebugOutputPathResponse"/>
+  </wsdl:message>
+  <wsdl:message name="invokeTestHarnessMethodRequest">
+    <wsdl:part name="parameters" element="ns:invokeTestHarnessMethod"/>
+  </wsdl:message>
+  <wsdl:message name="invokeTestHarnessMethodResponse">
+    <wsdl:part name="parameters" element="ns:invokeTestHarnessMethodResponse"/>
+  </wsdl:message>
+  <wsdl:message name="setFedoraDigitalRepositoryImplRequest">
+    <wsdl:part name="parameters" element="ns:setFedoraDigitalRepositoryImpl"/>
+  </wsdl:message>
+  <wsdl:message name="setDebugRequest">
+    <wsdl:part name="parameters" element="ns:setDebug"/>
+  </wsdl:message>
+  <wsdl:message name="createRequest"/>
+  <wsdl:message name="createResponse">
+    <wsdl:part name="parameters" element="ns:createResponse"/>
+  </wsdl:message>
+  <wsdl:portType name="FedoraDigitalRepositoryImplTestSvcPortType">
+    <wsdl:operation name="setKeystorePassword">
+      <wsdl:input message="ns:setKeystorePasswordRequest" wsaw:Action="urn:setKeystorePassword"/>
+    </wsdl:operation>
+    <wsdl:operation name="getFedoraDigitalRepositoryImpl">
+      <wsdl:input message="ns:getFedoraDigitalRepositoryImplRequest" wsaw:Action="urn:getFedoraDigitalRepositoryImpl"/>
+      <wsdl:output message="ns:getFedoraDigitalRepositoryImplResponse" wsaw:Action="urn:getFedoraDigitalRepositoryImplResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="setTruststorePassword">
+      <wsdl:input message="ns:setTruststorePasswordRequest" wsaw:Action="urn:setTruststorePassword"/>
+    </wsdl:operation>
+    <wsdl:operation name="setKeystorePath">
+      <wsdl:input message="ns:setKeystorePathRequest" wsaw:Action="urn:setKeystorePath"/>
+    </wsdl:operation>
+    <wsdl:operation name="setTruststorePath">
+      <wsdl:input message="ns:setTruststorePathRequest" wsaw:Action="urn:setTruststorePath"/>
+    </wsdl:operation>
+    <wsdl:operation name="setDebugOutputPath">
+      <wsdl:input message="ns:setDebugOutputPathRequest" wsaw:Action="urn:setDebugOutputPath"/>
+    </wsdl:operation>
+    <wsdl:operation name="getDebugOutputPath">
+      <wsdl:input message="ns:getDebugOutputPathRequest" wsaw:Action="urn:getDebugOutputPath"/>
+      <wsdl:output message="ns:getDebugOutputPathResponse" wsaw:Action="urn:getDebugOutputPathResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="invokeTestHarnessMethod">
+      <wsdl:input message="ns:invokeTestHarnessMethodRequest" wsaw:Action="urn:invokeTestHarnessMethod"/>
+      <wsdl:output message="ns:invokeTestHarnessMethodResponse" wsaw:Action="urn:invokeTestHarnessMethodResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="setFedoraDigitalRepositoryImpl">
+      <wsdl:input message="ns:setFedoraDigitalRepositoryImplRequest" wsaw:Action="urn:setFedoraDigitalRepositoryImpl"/>
+    </wsdl:operation>
+    <wsdl:operation name="setDebug">
+      <wsdl:input message="ns:setDebugRequest" wsaw:Action="urn:setDebug"/>
+    </wsdl:operation>
+    <wsdl:operation name="create">
+      <wsdl:input message="ns:createRequest" wsaw:Action="urn:create"/>
+      <wsdl:output message="ns:createResponse" wsaw:Action="urn:createResponse"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="FedoraDigitalRepositoryImplTestSvcSoap11Binding" type="ns:FedoraDigitalRepositoryImplTestSvcPortType">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+    <wsdl:operation name="setKeystorePassword">
+      <soap:operation soapAction="urn:setKeystorePassword" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="getFedoraDigitalRepositoryImpl">
+      <soap:operation soapAction="urn:getFedoraDigitalRepositoryImpl" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setTruststorePassword">
+      <soap:operation soapAction="urn:setTruststorePassword" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="setKeystorePath">
+      <soap:operation soapAction="urn:setKeystorePath" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="setTruststorePath">
+      <soap:operation soapAction="urn:setTruststorePath" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="setDebugOutputPath">
+      <soap:operation soapAction="urn:setDebugOutputPath" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="getDebugOutputPath">
+      <soap:operation soapAction="urn:getDebugOutputPath" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="invokeTestHarnessMethod">
+      <soap:operation soapAction="urn:invokeTestHarnessMethod" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setFedoraDigitalRepositoryImpl">
+      <soap:operation soapAction="urn:setFedoraDigitalRepositoryImpl" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="setDebug">
+      <soap:operation soapAction="urn:setDebug" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="create">
+      <soap:operation soapAction="urn:create" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="FedoraDigitalRepositoryImplTestSvcSoap12Binding" type="ns:FedoraDigitalRepositoryImplTestSvcPortType">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+    <wsdl:operation name="setKeystorePassword">
+      <soap12:operation soapAction="urn:setKeystorePassword" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="getFedoraDigitalRepositoryImpl">
+      <soap12:operation soapAction="urn:getFedoraDigitalRepositoryImpl" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setTruststorePassword">
+      <soap12:operation soapAction="urn:setTruststorePassword" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="setKeystorePath">
+      <soap12:operation soapAction="urn:setKeystorePath" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="setTruststorePath">
+      <soap12:operation soapAction="urn:setTruststorePath" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="setDebugOutputPath">
+      <soap12:operation soapAction="urn:setDebugOutputPath" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="getDebugOutputPath">
+      <soap12:operation soapAction="urn:getDebugOutputPath" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="invokeTestHarnessMethod">
+      <soap12:operation soapAction="urn:invokeTestHarnessMethod" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setFedoraDigitalRepositoryImpl">
+      <soap12:operation soapAction="urn:setFedoraDigitalRepositoryImpl" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="setDebug">
+      <soap12:operation soapAction="urn:setDebug" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="create">
+      <soap12:operation soapAction="urn:create" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="FedoraDigitalRepositoryImplTestSvcHttpBinding" type="ns:FedoraDigitalRepositoryImplTestSvcPortType">
+    <http:binding verb="POST"/>
+    <wsdl:operation name="setKeystorePassword">
+      <http:operation location="FedoraDigitalRepositoryImplTestSvc/setKeystorePassword"/>
+      <wsdl:input>
+        <mime:content type="text/xml" part="setKeystorePassword"/>
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="getFedoraDigitalRepositoryImpl">
+      <http:operation location="FedoraDigitalRepositoryImplTestSvc/getFedoraDigitalRepositoryImpl"/>
+      <wsdl:input>
+        <mime:content type="text/xml" part="getFedoraDigitalRepositoryImpl"/>
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content type="text/xml" part="getFedoraDigitalRepositoryImpl"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setTruststorePassword">
+      <http:operation location="FedoraDigitalRepositoryImplTestSvc/setTruststorePassword"/>
+      <wsdl:input>
+        <mime:content type="text/xml" part="setTruststorePassword"/>
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="setKeystorePath">
+      <http:operation location="FedoraDigitalRepositoryImplTestSvc/setKeystorePath"/>
+      <wsdl:input>
+        <mime:content type="text/xml" part="setKeystorePath"/>
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="setTruststorePath">
+      <http:operation location="FedoraDigitalRepositoryImplTestSvc/setTruststorePath"/>
+      <wsdl:input>
+        <mime:content type="text/xml" part="setTruststorePath"/>
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="setDebugOutputPath">
+      <http:operation location="FedoraDigitalRepositoryImplTestSvc/setDebugOutputPath"/>
+      <wsdl:input>
+        <mime:content type="text/xml" part="setDebugOutputPath"/>
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="getDebugOutputPath">
+      <http:operation location="FedoraDigitalRepositoryImplTestSvc/getDebugOutputPath"/>
+      <wsdl:input>
+        <mime:content type="text/xml" part="getDebugOutputPath"/>
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content type="text/xml" part="getDebugOutputPath"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="invokeTestHarnessMethod">
+      <http:operation location="FedoraDigitalRepositoryImplTestSvc/invokeTestHarnessMethod"/>
+      <wsdl:input>
+        <mime:content type="text/xml" part="invokeTestHarnessMethod"/>
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content type="text/xml" part="invokeTestHarnessMethod"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setFedoraDigitalRepositoryImpl">
+      <http:operation location="FedoraDigitalRepositoryImplTestSvc/setFedoraDigitalRepositoryImpl"/>
+      <wsdl:input>
+        <mime:content type="text/xml" part="setFedoraDigitalRepositoryImpl"/>
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="setDebug">
+      <http:operation location="FedoraDigitalRepositoryImplTestSvc/setDebug"/>
+      <wsdl:input>
+        <mime:content type="text/xml" part="setDebug"/>
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="create">
+      <http:operation location="FedoraDigitalRepositoryImplTestSvc/create"/>
+      <wsdl:input>
+        <mime:content type="text/xml" part="create"/>
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content type="text/xml" part="create"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="FedoraDigitalRepositoryImplTestSvc">
+    <wsdl:port name="FedoraDigitalRepositoryImplTestSvcHttpSoap11Endpoint" binding="ns:FedoraDigitalRepositoryImplTestSvcSoap11Binding">
+      <soap:address location="http://383509-vm-java:8080/axis2/services/FedoraDigitalRepositoryImplTestSvc.FedoraDigitalRepositoryImplTestSvcHttpSoap11Endpoint/"/>
+    </wsdl:port>
+    <wsdl:port name="FedoraDigitalRepositoryImplTestSvcHttpSoap12Endpoint" binding="ns:FedoraDigitalRepositoryImplTestSvcSoap12Binding">
+      <soap12:address location="http://383509-vm-java:8080/axis2/services/FedoraDigitalRepositoryImplTestSvc.FedoraDigitalRepositoryImplTestSvcHttpSoap12Endpoint/"/>
+    </wsdl:port>
+    <wsdl:port name="FedoraDigitalRepositoryImplTestSvcHttpEndpoint" binding="ns:FedoraDigitalRepositoryImplTestSvcHttpBinding">
+      <http:address location="http://383509-vm-java:8080/axis2/services/FedoraDigitalRepositoryImplTestSvc.FedoraDigitalRepositoryImplTestSvcHttpEndpoint/"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://383509-vm-java:8080/axis2/services/FedoraDigitalRepositoryImplTestSvc.FedoraDigitalRepositoryImplTestSvcHttpSoap12Endpoint/</con:endpoint></con:endpoints><con:operation isOneWay="false" action="urn:create" name="create" bindingOperationName="create" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional" id="92685eef-6c5e-4f4d-ab3a-531ff3ec0417"><con:settings/><con:call name="Request 1" id="bbfd3e54-604f-4290-9571-9b473ae82009"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://383509-vm-java:8080/axis2/services/FedoraDigitalRepositoryImplTestSvc.FedoraDigitalRepositoryImplTestSvcHttpSoap12Endpoint/</con:endpoint><con:request>&lt;soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope">
+   &lt;soap:Header/>
+   &lt;soap:Body/>
+&lt;/soap:Envelope></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:create"/></con:call></con:operation><con:operation isOneWay="false" action="urn:getDebugOutputPath" name="getDebugOutputPath" bindingOperationName="getDebugOutputPath" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional" id="fc959b3a-c632-43eb-976d-f37a87ca3ca3"><con:settings/><con:call name="Request 1" id="79b7e95b-3f9f-4ff6-9b3c-2b5bbcc412b4"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://383509-vm-java:8080/axis2/services/FedoraDigitalRepositoryImplTestSvc.FedoraDigitalRepositoryImplTestSvcHttpSoap12Endpoint/</con:endpoint><con:request>&lt;soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope">
+   &lt;soap:Header/>
+   &lt;soap:Body/>
+&lt;/soap:Envelope></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:getDebugOutputPath"/></con:call></con:operation><con:operation isOneWay="false" action="urn:getFedoraDigitalRepositoryImpl" name="getFedoraDigitalRepositoryImpl" bindingOperationName="getFedoraDigitalRepositoryImpl" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional" id="64744b71-5554-4a8b-92da-e2f0ce763bcb"><con:settings/><con:call name="Request 1" id="1b8e213f-e7d2-4b74-a4b9-3437fb5dc035"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://383509-vm-java:8080/axis2/services/FedoraDigitalRepositoryImplTestSvc.FedoraDigitalRepositoryImplTestSvcHttpSoap12Endpoint/</con:endpoint><con:request>&lt;soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope">
+   &lt;soap:Header/>
+   &lt;soap:Body/>
+&lt;/soap:Envelope></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:getFedoraDigitalRepositoryImpl"/></con:call></con:operation><con:operation isOneWay="false" action="urn:setDebug" name="setDebug" bindingOperationName="setDebug" type="One-Way" inputName="" sendsAttachments="false" anonymous="optional" id="424b318a-dd0f-41eb-b9e4-ce547a368ebe"><con:settings/><con:call name="Request 1" id="3c02f43c-1b7b-40bb-b9af-751906d3ea8e"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://383509-vm-java:8080/axis2/services/FedoraDigitalRepositoryImplTestSvc.FedoraDigitalRepositoryImplTestSvcHttpSoap12Endpoint/</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:fed="http://fedora.impl.ral.uhi.ac.uk">
+   <soap:Header/>
+   <soap:Body>
+      <fed:setDebug>
+         <!--Optional:-->
+         <fed:debug>?</fed:debug>
+      </fed:setDebug>
+   </soap:Body>
+</soap:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:setDebug"/></con:call></con:operation><con:operation isOneWay="false" action="urn:setDebugOutputPath" name="setDebugOutputPath" bindingOperationName="setDebugOutputPath" type="One-Way" inputName="" sendsAttachments="false" anonymous="optional" id="1eab0161-f4d0-4c09-9dcf-9425f8048b38"><con:settings/><con:call name="Request 1" id="4e631eb7-be54-4e71-a3f7-426f8b9049a8"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://383509-vm-java:8080/axis2/services/FedoraDigitalRepositoryImplTestSvc.FedoraDigitalRepositoryImplTestSvcHttpSoap12Endpoint/</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:fed="http://fedora.impl.ral.uhi.ac.uk">
+   <soap:Header/>
+   <soap:Body>
+      <fed:setDebugOutputPath>
+         <!--Optional:-->
+         <fed:debugOutputPath>?</fed:debugOutputPath>
+      </fed:setDebugOutputPath>
+   </soap:Body>
+</soap:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:setDebugOutputPath"/></con:call></con:operation><con:operation isOneWay="false" action="urn:setFedoraDigitalRepositoryImpl" name="setFedoraDigitalRepositoryImpl" bindingOperationName="setFedoraDigitalRepositoryImpl" type="One-Way" inputName="" sendsAttachments="false" anonymous="optional" id="47be045c-b8be-4135-a94d-df07ce8f7938"><con:settings/><con:call name="Request 1" id="98afea3d-3fdb-4672-ae89-2d1962f19221"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://383509-vm-java:8080/axis2/services/FedoraDigitalRepositoryImplTestSvc.FedoraDigitalRepositoryImplTestSvcHttpSoap12Endpoint/</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:fed="http://fedora.impl.ral.uhi.ac.uk" xmlns:xsd="http://fedora.impl.ral.uhi.ac.uk/xsd" xmlns:xsd1="http://util.java/xsd">
+   <soap:Header/>
+   <soap:Body>
+      <fed:setFedoraDigitalRepositoryImpl>
+         <!--Optional:-->
+         <fed:repo>
+            <!--Optional:-->
+            <xsd:repoConfig>
+               <!--Optional:-->
+               <xsd1:keys/>
+               <!--Optional:-->
+               <xsd1:locale>
+                  <!--Optional:-->
+                  <xsd1:ISO3Country>?</xsd1:ISO3Country>
+                  <!--Optional:-->
+                  <xsd1:ISO3Language>?</xsd1:ISO3Language>
+                  <!--Optional:-->
+                  <xsd1:country>?</xsd1:country>
+                  <!--Optional:-->
+                  <xsd1:displayCountry>?</xsd1:displayCountry>
+                  <!--Optional:-->
+                  <xsd1:displayLanguage>?</xsd1:displayLanguage>
+                  <!--Optional:-->
+                  <xsd1:displayName>?</xsd1:displayName>
+                  <!--Optional:-->
+                  <xsd1:displayVariant>?</xsd1:displayVariant>
+                  <!--Optional:-->
+                  <xsd1:language>?</xsd1:language>
+                  <!--Optional:-->
+                  <xsd1:variant>?</xsd1:variant>
+               </xsd1:locale>
+               <!--Optional:-->
+               <xsd1:keys/>
+            </xsd:repoConfig>
+         </fed:repo>
+      </fed:setFedoraDigitalRepositoryImpl>
+   </soap:Body>
+</soap:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:setFedoraDigitalRepositoryImpl"/></con:call></con:operation><con:operation isOneWay="false" action="urn:setKeystorePassword" name="setKeystorePassword" bindingOperationName="setKeystorePassword" type="One-Way" inputName="" sendsAttachments="false" anonymous="optional" id="004ea21c-8a07-4396-acd8-36b9ad99f414"><con:settings/><con:call name="Request 1" id="f2e8a4ae-3c1f-46c4-8df5-e670452016de"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://383509-vm-java:8080/axis2/services/FedoraDigitalRepositoryImplTestSvc.FedoraDigitalRepositoryImplTestSvcHttpSoap12Endpoint/</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:fed="http://fedora.impl.ral.uhi.ac.uk">
+   <soap:Header/>
+   <soap:Body>
+      <fed:setKeystorePassword>
+         <!--Optional:-->
+         <fed:keystorePassword>?</fed:keystorePassword>
+      </fed:setKeystorePassword>
+   </soap:Body>
+</soap:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:setKeystorePassword"/></con:call></con:operation><con:operation isOneWay="false" action="urn:setKeystorePath" name="setKeystorePath" bindingOperationName="setKeystorePath" type="One-Way" inputName="" sendsAttachments="false" anonymous="optional" id="6503f0dc-bf4d-4701-b028-8fd4299829c8"><con:settings/><con:call name="Request 1" id="c1e33940-eaba-49c0-95c9-bbf6a52ae25d"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://383509-vm-java:8080/axis2/services/FedoraDigitalRepositoryImplTestSvc.FedoraDigitalRepositoryImplTestSvcHttpSoap12Endpoint/</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:fed="http://fedora.impl.ral.uhi.ac.uk">
+   <soap:Header/>
+   <soap:Body>
+      <fed:setKeystorePath>
+         <!--Optional:-->
+         <fed:keystorePath>?</fed:keystorePath>
+      </fed:setKeystorePath>
+   </soap:Body>
+</soap:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:setKeystorePath"/></con:call></con:operation><con:operation isOneWay="false" action="urn:setTruststorePassword" name="setTruststorePassword" bindingOperationName="setTruststorePassword" type="One-Way" inputName="" sendsAttachments="false" anonymous="optional" id="5ad90d98-e60e-4889-b6e1-8ce6823660a0"><con:settings/><con:call name="Request 1" id="04ac4655-5f8f-46ba-b50b-f80921140b59"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://383509-vm-java:8080/axis2/services/FedoraDigitalRepositoryImplTestSvc.FedoraDigitalRepositoryImplTestSvcHttpSoap12Endpoint/</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:fed="http://fedora.impl.ral.uhi.ac.uk">
+   <soap:Header/>
+   <soap:Body>
+      <fed:setTruststorePassword>
+         <!--Optional:-->
+         <fed:truststorePassword>?</fed:truststorePassword>
+      </fed:setTruststorePassword>
+   </soap:Body>
+</soap:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:setTruststorePassword"/></con:call></con:operation><con:operation isOneWay="false" action="urn:setTruststorePath" name="setTruststorePath" bindingOperationName="setTruststorePath" type="One-Way" inputName="" sendsAttachments="false" anonymous="optional" id="25025cea-aaa8-4d84-ad4e-c98d553a5b93"><con:settings/><con:call name="Request 1" id="aaede302-bee5-431c-b58e-7b630447543e"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://383509-vm-java:8080/axis2/services/FedoraDigitalRepositoryImplTestSvc.FedoraDigitalRepositoryImplTestSvcHttpSoap12Endpoint/</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:fed="http://fedora.impl.ral.uhi.ac.uk">
+   <soap:Header/>
+   <soap:Body>
+      <fed:setTruststorePath>
+         <!--Optional:-->
+         <fed:truststorePath>?</fed:truststorePath>
+      </fed:setTruststorePath>
+   </soap:Body>
+</soap:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:setTruststorePath"/></con:call></con:operation><con:operation isOneWay="false" action="urn:invokeTestHarnessMethod" name="invokeTestHarnessMethod" bindingOperationName="invokeTestHarnessMethod" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional" id="76567928-6509-4668-9383-bd4791183104"><con:settings/><con:call name="Request 1" id="b2bcfd25-111b-4794-a09b-d37e4b434b58"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://383509-vm-java:8080/axis2/services/FedoraDigitalRepositoryImplTestSvc.FedoraDigitalRepositoryImplTestSvcHttpSoap12Endpoint/</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:fed="http://fedora.impl.ral.uhi.ac.uk">
+   <soap:Header/>
+   <soap:Body>
+      <fed:invokeTestHarnessMethod>
+         <!--Optional:-->
+         <fed:testMethodName>?</fed:testMethodName>
+      </fed:invokeTestHarnessMethod>
+   </soap:Body>
+</soap:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:invokeTestHarnessMethod"/></con:call></con:operation></con:interface><con:interface xsi:type="con:WsdlInterface" wsaVersion="NONE" name="FedoraDigitalRepositoryImplTestSvcSoap11Binding" type="wsdl" bindingName="{http://fedora.impl.ral.uhi.ac.uk}FedoraDigitalRepositoryImplTestSvcSoap11Binding" soapVersion="1_1" anonymous="optional" definition="http://383509-vm-java:8080/axis2/services/FedoraDigitalRepositoryImplTestSvc?wsdl" id="ee2f3480-5eb9-4b3c-8134-461ef2ec3bc3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://383509-vm-java:8080/axis2/services/FedoraDigitalRepositoryImplTestSvc?wsdl"><con:part><con:url>http://383509-vm-java:8080/axis2/services/FedoraDigitalRepositoryImplTestSvc?wsdl</con:url><con:content><![CDATA[<wsdl:definitions targetNamespace="http://fedora.impl.ral.uhi.ac.uk" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:ax29="http://util.java/xsd" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:ax212="http://ral.uhi.ac.uk/xsd" xmlns:ns1="http://org.apache.axis2/xsd" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:ns="http://fedora.impl.ral.uhi.ac.uk" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ax28="http://fedora.impl.ral.uhi.ac.uk/xsd">
+  <wsdl:documentation>FedoraDigitalRepositoryImplTestSvc</wsdl:documentation>
+  <wsdl:types>
+    <xs:schema attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://fedora.impl.ral.uhi.ac.uk/xsd" xmlns:ax210="http://util.java/xsd">
+      <xs:import namespace="http://util.java/xsd"/>
+      <xs:complexType name="FedoraDigitalRepositoryImpl">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="repoConfig" nillable="true" type="ax210:PropertyResourceBundle"/>
+        </xs:sequence>
+      </xs:complexType>
+    </xs:schema>
+    <xs:schema attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://util.java/xsd">
+      <xs:complexType name="ResourceBundle">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="keys" nillable="true" type="ax29:Enumeration"/>
+          <xs:element minOccurs="0" name="locale" nillable="true" type="ax29:Locale"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="Enumeration">
+        <xs:sequence/>
+      </xs:complexType>
+      <xs:complexType name="Locale">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="ISO3Country" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="ISO3Language" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="country" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="displayCountry" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="displayLanguage" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="displayName" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="displayVariant" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="language" nillable="true" type="xs:string"/>
+          <xs:element minOccurs="0" name="variant" nillable="true" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="PropertyResourceBundle">
+        <xs:complexContent>
+          <xs:extension base="ax29:ResourceBundle">
+            <xs:sequence>
+              <xs:element minOccurs="0" name="keys" nillable="true" type="ax29:Enumeration"/>
+            </xs:sequence>
+          </xs:extension>
+        </xs:complexContent>
+      </xs:complexType>
+    </xs:schema>
+    <xs:schema attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://fedora.impl.ral.uhi.ac.uk" xmlns:ax214="http://ral.uhi.ac.uk/xsd" xmlns:ax211="http://fedora.impl.ral.uhi.ac.uk/xsd">
+      <xs:import namespace="http://fedora.impl.ral.uhi.ac.uk/xsd"/>
+      <xs:import namespace="http://ral.uhi.ac.uk/xsd"/>
+      <xs:element name="setTruststorePath">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="truststorePath" nillable="true" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="setTruststorePassword">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="truststorePassword" nillable="true" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="setKeystorePath">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="keystorePath" nillable="true" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="setKeystorePassword">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="keystorePassword" nillable="true" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="setFedoraDigitalRepositoryImpl">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="repo" nillable="true" type="ax211:FedoraDigitalRepositoryImpl"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="setDebugOutputPath">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="debugOutputPath" nillable="true" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="setDebug">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="debug" type="xs:boolean"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getFedoraDigitalRepositoryImplResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="return" nillable="true" type="ax211:FedoraDigitalRepositoryImpl"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="getDebugOutputPathResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="return" nillable="true" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="createResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" name="return" nillable="true" type="ax214:DigitalRepository"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:schema>
+    <xs:schema attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://ral.uhi.ac.uk/xsd" xmlns:ax213="http://util.java/xsd">
+      <xs:import namespace="http://util.java/xsd"/>
+      <xs:complexType name="DigitalRepository">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="repoConfig" nillable="true" type="ax213:PropertyResourceBundle"/>
+        </xs:sequence>
+      </xs:complexType>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="setKeystorePasswordRequest">
+    <wsdl:part name="parameters" element="ns:setKeystorePassword"/>
+  </wsdl:message>
+  <wsdl:message name="getFedoraDigitalRepositoryImplRequest"/>
+  <wsdl:message name="getFedoraDigitalRepositoryImplResponse">
+    <wsdl:part name="parameters" element="ns:getFedoraDigitalRepositoryImplResponse"/>
+  </wsdl:message>
+  <wsdl:message name="setTruststorePasswordRequest">
+    <wsdl:part name="parameters" element="ns:setTruststorePassword"/>
+  </wsdl:message>
+  <wsdl:message name="setKeystorePathRequest">
+    <wsdl:part name="parameters" element="ns:setKeystorePath"/>
+  </wsdl:message>
+  <wsdl:message name="setTruststorePathRequest">
+    <wsdl:part name="parameters" element="ns:setTruststorePath"/>
+  </wsdl:message>
+  <wsdl:message name="setDebugOutputPathRequest">
+    <wsdl:part name="parameters" element="ns:setDebugOutputPath"/>
+  </wsdl:message>
+  <wsdl:message name="getDebugOutputPathRequest"/>
+  <wsdl:message name="getDebugOutputPathResponse">
+    <wsdl:part name="parameters" element="ns:getDebugOutputPathResponse"/>
+  </wsdl:message>
+  <wsdl:message name="setFedoraDigitalRepositoryImplRequest">
+    <wsdl:part name="parameters" element="ns:setFedoraDigitalRepositoryImpl"/>
+  </wsdl:message>
+  <wsdl:message name="setDebugRequest">
+    <wsdl:part name="parameters" element="ns:setDebug"/>
+  </wsdl:message>
+  <wsdl:message name="createRequest"/>
+  <wsdl:message name="createResponse">
+    <wsdl:part name="parameters" element="ns:createResponse"/>
+  </wsdl:message>
+  <wsdl:portType name="FedoraDigitalRepositoryImplTestSvcPortType">
+    <wsdl:operation name="setKeystorePassword">
+      <wsdl:input message="ns:setKeystorePasswordRequest" wsaw:Action="urn:setKeystorePassword"/>
+    </wsdl:operation>
+    <wsdl:operation name="getFedoraDigitalRepositoryImpl">
+      <wsdl:input message="ns:getFedoraDigitalRepositoryImplRequest" wsaw:Action="urn:getFedoraDigitalRepositoryImpl"/>
+      <wsdl:output message="ns:getFedoraDigitalRepositoryImplResponse" wsaw:Action="urn:getFedoraDigitalRepositoryImplResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="setTruststorePassword">
+      <wsdl:input message="ns:setTruststorePasswordRequest" wsaw:Action="urn:setTruststorePassword"/>
+    </wsdl:operation>
+    <wsdl:operation name="setKeystorePath">
+      <wsdl:input message="ns:setKeystorePathRequest" wsaw:Action="urn:setKeystorePath"/>
+    </wsdl:operation>
+    <wsdl:operation name="setTruststorePath">
+      <wsdl:input message="ns:setTruststorePathRequest" wsaw:Action="urn:setTruststorePath"/>
+    </wsdl:operation>
+    <wsdl:operation name="setDebugOutputPath">
+      <wsdl:input message="ns:setDebugOutputPathRequest" wsaw:Action="urn:setDebugOutputPath"/>
+    </wsdl:operation>
+    <wsdl:operation name="getDebugOutputPath">
+      <wsdl:input message="ns:getDebugOutputPathRequest" wsaw:Action="urn:getDebugOutputPath"/>
+      <wsdl:output message="ns:getDebugOutputPathResponse" wsaw:Action="urn:getDebugOutputPathResponse"/>
+    </wsdl:operation>
+    <wsdl:operation name="setFedoraDigitalRepositoryImpl">
+      <wsdl:input message="ns:setFedoraDigitalRepositoryImplRequest" wsaw:Action="urn:setFedoraDigitalRepositoryImpl"/>
+    </wsdl:operation>
+    <wsdl:operation name="setDebug">
+      <wsdl:input message="ns:setDebugRequest" wsaw:Action="urn:setDebug"/>
+    </wsdl:operation>
+    <wsdl:operation name="create">
+      <wsdl:input message="ns:createRequest" wsaw:Action="urn:create"/>
+      <wsdl:output message="ns:createResponse" wsaw:Action="urn:createResponse"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="FedoraDigitalRepositoryImplTestSvcSoap11Binding" type="ns:FedoraDigitalRepositoryImplTestSvcPortType">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+    <wsdl:operation name="setKeystorePassword">
+      <soap:operation soapAction="urn:setKeystorePassword" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="getFedoraDigitalRepositoryImpl">
+      <soap:operation soapAction="urn:getFedoraDigitalRepositoryImpl" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setTruststorePassword">
+      <soap:operation soapAction="urn:setTruststorePassword" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="setKeystorePath">
+      <soap:operation soapAction="urn:setKeystorePath" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="setTruststorePath">
+      <soap:operation soapAction="urn:setTruststorePath" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="setDebugOutputPath">
+      <soap:operation soapAction="urn:setDebugOutputPath" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="getDebugOutputPath">
+      <soap:operation soapAction="urn:getDebugOutputPath" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setFedoraDigitalRepositoryImpl">
+      <soap:operation soapAction="urn:setFedoraDigitalRepositoryImpl" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="setDebug">
+      <soap:operation soapAction="urn:setDebug" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="create">
+      <soap:operation soapAction="urn:create" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="FedoraDigitalRepositoryImplTestSvcSoap12Binding" type="ns:FedoraDigitalRepositoryImplTestSvcPortType">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+    <wsdl:operation name="setKeystorePassword">
+      <soap12:operation soapAction="urn:setKeystorePassword" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="getFedoraDigitalRepositoryImpl">
+      <soap12:operation soapAction="urn:getFedoraDigitalRepositoryImpl" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setTruststorePassword">
+      <soap12:operation soapAction="urn:setTruststorePassword" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="setKeystorePath">
+      <soap12:operation soapAction="urn:setKeystorePath" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="setTruststorePath">
+      <soap12:operation soapAction="urn:setTruststorePath" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="setDebugOutputPath">
+      <soap12:operation soapAction="urn:setDebugOutputPath" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="getDebugOutputPath">
+      <soap12:operation soapAction="urn:getDebugOutputPath" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setFedoraDigitalRepositoryImpl">
+      <soap12:operation soapAction="urn:setFedoraDigitalRepositoryImpl" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="setDebug">
+      <soap12:operation soapAction="urn:setDebug" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="create">
+      <soap12:operation soapAction="urn:create" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="FedoraDigitalRepositoryImplTestSvcHttpBinding" type="ns:FedoraDigitalRepositoryImplTestSvcPortType">
+    <http:binding verb="POST"/>
+    <wsdl:operation name="setKeystorePassword">
+      <http:operation location="FedoraDigitalRepositoryImplTestSvc/setKeystorePassword"/>
+      <wsdl:input>
+        <mime:content type="text/xml" part="setKeystorePassword"/>
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="getFedoraDigitalRepositoryImpl">
+      <http:operation location="FedoraDigitalRepositoryImplTestSvc/getFedoraDigitalRepositoryImpl"/>
+      <wsdl:input>
+        <mime:content type="text/xml" part="getFedoraDigitalRepositoryImpl"/>
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content type="text/xml" part="getFedoraDigitalRepositoryImpl"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setTruststorePassword">
+      <http:operation location="FedoraDigitalRepositoryImplTestSvc/setTruststorePassword"/>
+      <wsdl:input>
+        <mime:content type="text/xml" part="setTruststorePassword"/>
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="setKeystorePath">
+      <http:operation location="FedoraDigitalRepositoryImplTestSvc/setKeystorePath"/>
+      <wsdl:input>
+        <mime:content type="text/xml" part="setKeystorePath"/>
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="setTruststorePath">
+      <http:operation location="FedoraDigitalRepositoryImplTestSvc/setTruststorePath"/>
+      <wsdl:input>
+        <mime:content type="text/xml" part="setTruststorePath"/>
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="setDebugOutputPath">
+      <http:operation location="FedoraDigitalRepositoryImplTestSvc/setDebugOutputPath"/>
+      <wsdl:input>
+        <mime:content type="text/xml" part="setDebugOutputPath"/>
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="getDebugOutputPath">
+      <http:operation location="FedoraDigitalRepositoryImplTestSvc/getDebugOutputPath"/>
+      <wsdl:input>
+        <mime:content type="text/xml" part="getDebugOutputPath"/>
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content type="text/xml" part="getDebugOutputPath"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="setFedoraDigitalRepositoryImpl">
+      <http:operation location="FedoraDigitalRepositoryImplTestSvc/setFedoraDigitalRepositoryImpl"/>
+      <wsdl:input>
+        <mime:content type="text/xml" part="setFedoraDigitalRepositoryImpl"/>
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="setDebug">
+      <http:operation location="FedoraDigitalRepositoryImplTestSvc/setDebug"/>
+      <wsdl:input>
+        <mime:content type="text/xml" part="setDebug"/>
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="create">
+      <http:operation location="FedoraDigitalRepositoryImplTestSvc/create"/>
+      <wsdl:input>
+        <mime:content type="text/xml" part="create"/>
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content type="text/xml" part="create"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="FedoraDigitalRepositoryImplTestSvc">
+    <wsdl:port name="FedoraDigitalRepositoryImplTestSvcHttpSoap11Endpoint" binding="ns:FedoraDigitalRepositoryImplTestSvcSoap11Binding">
+      <soap:address location="http://383509-vm-java:8080/axis2/services/FedoraDigitalRepositoryImplTestSvc.FedoraDigitalRepositoryImplTestSvcHttpSoap11Endpoint/"/>
+    </wsdl:port>
+    <wsdl:port name="FedoraDigitalRepositoryImplTestSvcHttpSoap12Endpoint" binding="ns:FedoraDigitalRepositoryImplTestSvcSoap12Binding">
+      <soap12:address location="http://383509-vm-java:8080/axis2/services/FedoraDigitalRepositoryImplTestSvc.FedoraDigitalRepositoryImplTestSvcHttpSoap12Endpoint/"/>
+    </wsdl:port>
+    <wsdl:port name="FedoraDigitalRepositoryImplTestSvcHttpEndpoint" binding="ns:FedoraDigitalRepositoryImplTestSvcHttpBinding">
+      <http:address location="http://383509-vm-java:8080/axis2/services/FedoraDigitalRepositoryImplTestSvc.FedoraDigitalRepositoryImplTestSvcHttpEndpoint/"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://383509-vm-java:8080/axis2/services/FedoraDigitalRepositoryImplTestSvc.FedoraDigitalRepositoryImplTestSvcHttpSoap11Endpoint/</con:endpoint></con:endpoints><con:operation isOneWay="false" action="urn:create" name="create" bindingOperationName="create" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional" id="a715168b-b2ad-4669-8914-9f9e54d75cd1"><con:settings/><con:call name="Request 1" id="3944592b-1951-4a8f-a37d-73acc423e89d"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://383509-vm-java:8080/axis2/services/FedoraDigitalRepositoryImplTestSvc.FedoraDigitalRepositoryImplTestSvcHttpSoap11Endpoint/</con:endpoint><con:request>&lt;soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+   &lt;soapenv:Header/>
+   &lt;soapenv:Body/>
+&lt;/soapenv:Envelope></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:create"/></con:call></con:operation><con:operation isOneWay="false" action="urn:getDebugOutputPath" name="getDebugOutputPath" bindingOperationName="getDebugOutputPath" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional" id="9139503f-3b16-4c8a-ad13-21e1cfe38e87"><con:settings/><con:call name="Request 1" id="0349bc9c-69c1-4a77-9833-795530be49a4"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://383509-vm-java:8080/axis2/services/FedoraDigitalRepositoryImplTestSvc.FedoraDigitalRepositoryImplTestSvcHttpSoap11Endpoint/</con:endpoint><con:request>&lt;soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+   &lt;soapenv:Header/>
+   &lt;soapenv:Body/>
+&lt;/soapenv:Envelope></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:getDebugOutputPath"/></con:call></con:operation><con:operation isOneWay="false" action="urn:getFedoraDigitalRepositoryImpl" name="getFedoraDigitalRepositoryImpl" bindingOperationName="getFedoraDigitalRepositoryImpl" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional" id="4216f877-8d6b-4afa-a11d-9bf5443747c4"><con:settings/><con:call name="Request 1" id="58a6fe3f-fade-4a7d-bee0-a14a400ba0ae"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://383509-vm-java:8080/axis2/services/FedoraDigitalRepositoryImplTestSvc.FedoraDigitalRepositoryImplTestSvcHttpSoap11Endpoint/</con:endpoint><con:request>&lt;soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">
+   &lt;soapenv:Header/>
+   &lt;soapenv:Body/>
+&lt;/soapenv:Envelope></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:getFedoraDigitalRepositoryImpl"/></con:call></con:operation><con:operation isOneWay="false" action="urn:setDebug" name="setDebug" bindingOperationName="setDebug" type="One-Way" inputName="" sendsAttachments="false" anonymous="optional" id="418bef38-4029-4f24-999f-fa0b7773754e"><con:settings/><con:call name="Request 1" id="5da149f5-b8ab-4851-a196-e242f6cd9b3f"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://383509-vm-java:8080/axis2/services/FedoraDigitalRepositoryImplTestSvc.FedoraDigitalRepositoryImplTestSvcHttpSoap11Endpoint/</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:fed="http://fedora.impl.ral.uhi.ac.uk">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <fed:setDebug>
+         <!--Optional:-->
+         <fed:debug>?</fed:debug>
+      </fed:setDebug>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:setDebug"/></con:call></con:operation><con:operation isOneWay="false" action="urn:setDebugOutputPath" name="setDebugOutputPath" bindingOperationName="setDebugOutputPath" type="One-Way" inputName="" sendsAttachments="false" anonymous="optional" id="d07b0177-f00f-40ee-94a6-2cfe97925da8"><con:settings/><con:call name="Request 1" id="111cb3bb-e2c3-42c9-a462-fa227cc04f3d"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://383509-vm-java:8080/axis2/services/FedoraDigitalRepositoryImplTestSvc.FedoraDigitalRepositoryImplTestSvcHttpSoap11Endpoint/</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:fed="http://fedora.impl.ral.uhi.ac.uk">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <fed:setDebugOutputPath>
+         <!--Optional:-->
+         <fed:debugOutputPath>?</fed:debugOutputPath>
+      </fed:setDebugOutputPath>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:setDebugOutputPath"/></con:call></con:operation><con:operation isOneWay="false" action="urn:setFedoraDigitalRepositoryImpl" name="setFedoraDigitalRepositoryImpl" bindingOperationName="setFedoraDigitalRepositoryImpl" type="One-Way" inputName="" sendsAttachments="false" anonymous="optional" id="987c9802-4393-40c4-a15a-ab54f5fecf35"><con:settings/><con:call name="Request 1" id="169232eb-c4b6-4bf7-8d63-2f0e7aa3d4ac"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://383509-vm-java:8080/axis2/services/FedoraDigitalRepositoryImplTestSvc.FedoraDigitalRepositoryImplTestSvcHttpSoap11Endpoint/</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:fed="http://fedora.impl.ral.uhi.ac.uk" xmlns:xsd="http://fedora.impl.ral.uhi.ac.uk/xsd" xmlns:xsd1="http://util.java/xsd">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <fed:setFedoraDigitalRepositoryImpl>
+         <!--Optional:-->
+         <fed:repo>
+            <!--Optional:-->
+            <xsd:repoConfig>
+               <!--Optional:-->
+               <xsd1:keys/>
+               <!--Optional:-->
+               <xsd1:locale>
+                  <!--Optional:-->
+                  <xsd1:ISO3Country>?</xsd1:ISO3Country>
+                  <!--Optional:-->
+                  <xsd1:ISO3Language>?</xsd1:ISO3Language>
+                  <!--Optional:-->
+                  <xsd1:country>?</xsd1:country>
+                  <!--Optional:-->
+                  <xsd1:displayCountry>?</xsd1:displayCountry>
+                  <!--Optional:-->
+                  <xsd1:displayLanguage>?</xsd1:displayLanguage>
+                  <!--Optional:-->
+                  <xsd1:displayName>?</xsd1:displayName>
+                  <!--Optional:-->
+                  <xsd1:displayVariant>?</xsd1:displayVariant>
+                  <!--Optional:-->
+                  <xsd1:language>?</xsd1:language>
+                  <!--Optional:-->
+                  <xsd1:variant>?</xsd1:variant>
+               </xsd1:locale>
+               <!--Optional:-->
+               <xsd1:keys/>
+            </xsd:repoConfig>
+         </fed:repo>
+      </fed:setFedoraDigitalRepositoryImpl>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:setFedoraDigitalRepositoryImpl"/></con:call></con:operation><con:operation isOneWay="false" action="urn:setKeystorePassword" name="setKeystorePassword" bindingOperationName="setKeystorePassword" type="One-Way" inputName="" sendsAttachments="false" anonymous="optional" id="17c339b9-c512-4108-bb52-39ee5cdca22e"><con:settings/><con:call name="Request 1" id="55cb1b7a-7ad4-4d26-8279-2115ed9e99a9"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://383509-vm-java:8080/axis2/services/FedoraDigitalRepositoryImplTestSvc.FedoraDigitalRepositoryImplTestSvcHttpSoap11Endpoint/</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:fed="http://fedora.impl.ral.uhi.ac.uk">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <fed:setKeystorePassword>
+         <!--Optional:-->
+         <fed:keystorePassword>?</fed:keystorePassword>
+      </fed:setKeystorePassword>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:setKeystorePassword"/></con:call></con:operation><con:operation isOneWay="false" action="urn:setKeystorePath" name="setKeystorePath" bindingOperationName="setKeystorePath" type="One-Way" inputName="" sendsAttachments="false" anonymous="optional" id="4fa6a300-dd4f-41eb-b004-ab237be0e473"><con:settings/><con:call name="Request 1" id="69028b2c-631b-4e8a-b55e-bed98918ef10"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://383509-vm-java:8080/axis2/services/FedoraDigitalRepositoryImplTestSvc.FedoraDigitalRepositoryImplTestSvcHttpSoap11Endpoint/</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:fed="http://fedora.impl.ral.uhi.ac.uk">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <fed:setKeystorePath>
+         <!--Optional:-->
+         <fed:keystorePath>?</fed:keystorePath>
+      </fed:setKeystorePath>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:setKeystorePath"/></con:call></con:operation><con:operation isOneWay="false" action="urn:setTruststorePassword" name="setTruststorePassword" bindingOperationName="setTruststorePassword" type="One-Way" inputName="" sendsAttachments="false" anonymous="optional" id="69ada269-75a0-4c60-99f4-746ab44059a4"><con:settings/><con:call name="Request 1" id="2ef4936f-a204-4fb3-ad3f-8dd841ef44be"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://383509-vm-java:8080/axis2/services/FedoraDigitalRepositoryImplTestSvc.FedoraDigitalRepositoryImplTestSvcHttpSoap11Endpoint/</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:fed="http://fedora.impl.ral.uhi.ac.uk">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <fed:setTruststorePassword>
+         <!--Optional:-->
+         <fed:truststorePassword>?</fed:truststorePassword>
+      </fed:setTruststorePassword>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:setTruststorePassword"/></con:call></con:operation><con:operation isOneWay="false" action="urn:setTruststorePath" name="setTruststorePath" bindingOperationName="setTruststorePath" type="One-Way" inputName="" sendsAttachments="false" anonymous="optional" id="55c42f6d-617e-4ceb-b656-0e32ee7841a5"><con:settings/><con:call name="Request 1" id="1bd5b848-3e6b-4140-a144-1a8f1fc81f54"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://383509-vm-java:8080/axis2/services/FedoraDigitalRepositoryImplTestSvc.FedoraDigitalRepositoryImplTestSvcHttpSoap11Endpoint/</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:fed="http://fedora.impl.ral.uhi.ac.uk">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <fed:setTruststorePath>
+         <!--Optional:-->
+         <fed:truststorePath>?</fed:truststorePath>
+      </fed:setTruststorePath>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="urn:setTruststorePath"/></con:call></con:operation></con:interface><con:testSuite name="FedoraDigitalRepositoryImplTestSvc TestSuite" id="b7c9b143-0148-4a2f-a38c-a3630747c66f"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="CreateGetDeleteFolderCase" searchProperties="true" id="0dd1b872-2b1d-4b43-a486-f576aafac528"><con:settings/><con:testStep type="properties" name="DefineBeanValues" id="fc8e678c-1bab-4ddd-8906-5550c394928f"><con:settings/><con:config xsi:type="con:PropertiesStep" saveFirst="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:properties><con:property><con:name>KeyStorePath</con:name><con:value>C:\Sun\SDK\domains\domain1\config\keystore.jks</con:value></con:property><con:property><con:name>KeyStorePassword</con:name><con:value>changeit</con:value></con:property><con:property><con:name>TrustStorePath</con:name><con:value>C:\Sun\SDK\domains\domain1\config\cacerts.jks</con:value></con:property><con:property><con:name>TrustStorePassword</con:name><con:value>changeit</con:value></con:property><con:property><con:name>DebugOutputPath</con:name><con:value>C:\apache-tomcat-5.5.28\logs</con:value></con:property><con:property><con:name>Debug</con:name><con:value>true</con:value></con:property></con:properties></con:config></con:testStep><con:testStep type="properties" name="DefineTestMethod" id="909ea035-935d-48bc-99ff-ee57800014c3"><con:settings/><con:config xsi:type="con:PropertiesStep" saveFirst="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:properties><con:property><con:name>Method</con:name><con:value>createAndFindFolder</con:value></con:property></con:properties></con:config></con:testStep><con:testStep type="transfer" name="SetTestCaseDataValues" id="0d172497-1de2-433c-a150-9462c36d6f7c"><con:settings/><con:config xsi:type="con:PropertyTransfersStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true" ignoreEmpty="false" transferToAll="false" useXQuery="false" entitize="false" transferChildNodes="false"><con:name>SetDebug</con:name><con:sourceType>Debug</con:sourceType><con:sourceStep>DefineBeanValues</con:sourceStep><con:targetType>enabled</con:targetType><con:targetStep>SetDebug</con:targetStep></con:transfers><con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true" transferToAll="false" ignoreEmpty="false" entitize="false"><con:name>DebugOptPath</con:name><con:sourceType>DebugOutputPath</con:sourceType><con:sourceStep>DefineBeanValues</con:sourceStep><con:targetType>debugOptPath</con:targetType><con:targetStep>SetDebugPath</con:targetStep></con:transfers><con:transfers setNullOnMissingSource="true" transferTextContent="true" failOnError="true" useXQuery="false" ignoreEmpty="false" entitize="false" transferToAll="false"><con:name>TestMethod</con:name><con:sourceType>Method</con:sourceType><con:sourceStep>DefineTestMethod</con:sourceStep><con:targetType>methodName</con:targetType><con:targetStep>InvokeTestHarnessMethod</con:targetStep></con:transfers></con:config></con:testStep><con:testStep type="calltestcase" name="SetDebug" id="2c804180-4c0e-4bbe-9e38-59ff74d38ad8"><con:settings/><con:config xsi:type="con:RunTestCaseStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:targetTestCase>d2a91195-4346-4d31-97e1-53fc110ac008</con:targetTestCase><con:properties><con:property><con:name>enabled</con:name><con:value>true</con:value></con:property></con:properties><con:returnProperties/><con:runMode>SINGLETON_AND_FAIL</con:runMode></con:config></con:testStep><con:testStep type="calltestcase" name="SetDebugPath" id="47c4efb9-60a8-4981-aab7-43d2c993622e"><con:settings/><con:config xsi:type="con:RunTestCaseStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:targetTestCase>32888ba7-f192-4133-ba11-dc81a828ea3a</con:targetTestCase><con:properties><con:property><con:name>debugOptPath</con:name><con:value>C:\apache-tomcat-5.5.28\logs</con:value></con:property></con:properties><con:returnProperties/><con:runMode>SINGLETON_AND_FAIL</con:runMode></con:config></con:testStep><con:testStep type="calltestcase" name="SetKeyStorePath" id="0279f0d9-d9e6-43c2-ae2d-fbc63f394e4a"><con:settings/><con:config xsi:type="con:RunTestCaseStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:targetTestCase>5cd69274-203c-4adb-abbb-0a63c59921ae</con:targetTestCase><con:properties><con:property><con:name>keystorePath</con:name></con:property></con:properties><con:returnProperties/><con:runMode>SINGLETON_AND_FAIL</con:runMode></con:config></con:testStep><con:testStep type="calltestcase" name="SetKeyStorePassword" id="5401ca84-91c9-497d-bf60-348b63afa5af"><con:settings/><con:config xsi:type="con:RunTestCaseStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:targetTestCase>9aed8b52-d3b4-4f85-89bb-3eac51be150d</con:targetTestCase><con:properties><con:property><con:name>keystorePassword</con:name></con:property></con:properties><con:returnProperties/><con:runMode>SINGLETON_AND_FAIL</con:runMode></con:config></con:testStep><con:testStep type="calltestcase" name="SetTrustStorePath" id="b123378f-df4f-4caf-8f54-aeeef34e81a1"><con:settings/><con:config xsi:type="con:RunTestCaseStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:targetTestCase>5370dab1-dc69-409c-99a0-d8df01839753</con:targetTestCase><con:properties><con:property><con:name>truststorePath</con:name></con:property></con:properties><con:returnProperties/><con:runMode>SINGLETON_AND_FAIL</con:runMode></con:config></con:testStep><con:testStep type="calltestcase" name="SetTrustStorePassword" id="435006c9-85b3-42f0-8609-34de00b5e7be"><con:settings/><con:config xsi:type="con:RunTestCaseStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:targetTestCase>bc16ebf8-7933-4953-a5aa-91d2e535ed6d</con:targetTestCase><con:properties><con:property><con:name>truststorePassword</con:name></con:property></con:properties><con:returnProperties/><con:runMode>SINGLETON_AND_FAIL</con:runMode></con:config></con:testStep><con:testStep type="request" name="create" id="132200b2-78f6-4f0e-8dd7-25f52d0b78b0"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>FedoraDigitalRepositoryImplTestSvcSoap12Binding</con:interface><con:operation>create</con:operation><con:request name="create"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://383509-vm-java:8080/axis2/services/FedoraDigitalRepositoryImplTestSvc.FedoraDigitalRepositoryImplTestSvcHttpSoap12Endpoint/</con:endpoint><con:request>&lt;soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope">
+   &lt;soap:Header/>
+   &lt;soap:Body/>
+&lt;/soap:Envelope></con:request><con:wsaConfig action="urn:create" mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:testStep type="calltestcase" name="InvokeTestHarnessMethod" id="cb5355f0-870f-4ea5-b981-ee32c4bc463d"><con:settings/><con:config xsi:type="con:RunTestCaseStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:targetTestCase>1d87c35c-debc-4046-9d67-66826700e77b</con:targetTestCase><con:properties><con:property><con:name>methodName</con:name><con:value>createAndFindFolder</con:value></con:property></con:properties><con:returnProperties/><con:runMode>SINGLETON_AND_FAIL</con:runMode></con:config></con:testStep><con:properties/></con:testCase><con:testCase failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="getDebugOutputPath TestCase" searchProperties="true" id="4f127ab3-12d8-4ded-855b-e6c50f17b449"><con:settings/><con:testStep type="request" name="getDebugOutput2" id="83c8b6f7-3fc6-4523-ab63-09a844861982"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>FedoraDigitalRepositoryImplTestSvcSoap12Binding</con:interface><con:operation>getDebugOutputPath</con:operation><con:request name="getDebugOutput2"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://383509-vm-java:8080/axis2/services/FedoraDigitalRepositoryImplTestSvc.FedoraDigitalRepositoryImplTestSvcHttpSoap12Endpoint/</con:endpoint><con:request>&lt;soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope">
+   &lt;soap:Header/>
+   &lt;soap:Body/>
+&lt;/soap:Envelope></con:request><con:assertion type="SOAP Response" id="19ae0b09-97ed-427f-9433-dccf71279ef2"/><con:wsaConfig mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:testCase failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="getFedoraDigitalRepositoryImpl TestCase" searchProperties="true" id="798ac8d9-d399-4ee1-9a72-204c97d39d09"><con:settings/><con:testStep type="request" name="getFedoraDigitalRepositoryImpl" id="f485fb5d-7998-4a6d-b6cb-34f8b813dc88"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>FedoraDigitalRepositoryImplTestSvcSoap12Binding</con:interface><con:operation>getFedoraDigitalRepositoryImpl</con:operation><con:request name="getFedoraDigitalRepositoryImpl"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://383509-vm-java:8080/axis2/services/FedoraDigitalRepositoryImplTestSvc.FedoraDigitalRepositoryImplTestSvcHttpSoap12Endpoint/</con:endpoint><con:request>&lt;soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope">
+   &lt;soap:Header/>
+   &lt;soap:Body/>
+&lt;/soap:Envelope></con:request><con:wsaConfig action="urn:getFedoraDigitalRepositoryImpl"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:testCase failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="setDebug TestCase" searchProperties="true" id="d2a91195-4346-4d31-97e1-53fc110ac008"><con:settings/><con:testStep type="request" name="setDebug" id="8f1a2f51-aee8-4215-94b2-ce4af92e964d"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>FedoraDigitalRepositoryImplTestSvcSoap12Binding</con:interface><con:operation>setDebug</con:operation><con:request name="setDebug"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://383509-vm-java:8080/axis2/services/FedoraDigitalRepositoryImplTestSvc.FedoraDigitalRepositoryImplTestSvcHttpSoap12Endpoint/</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:fed="http://fedora.impl.ral.uhi.ac.uk">
+   <soap:Header/>
+   <soap:Body>
+      <fed:setDebug>
+         <!--Optional:-->
+         <fed:debug>$#TestCase#enabled</fed:debug>
+      </fed:setDebug>
+   </soap:Body>
+</soap:Envelope>]]></con:request><con:wsaConfig action="urn:setDebug" mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties><con:property><con:name>enabled</con:name><con:value>true</con:value></con:property></con:properties></con:testCase><con:testCase failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="setDebugOutputPath TestCase" searchProperties="true" id="32888ba7-f192-4133-ba11-dc81a828ea3a"><con:settings/><con:testStep type="request" name="setDebugOutputPath" id="14ab77a7-9f35-4a97-8dc7-e792855e97db"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>FedoraDigitalRepositoryImplTestSvcSoap12Binding</con:interface><con:operation>setDebugOutputPath</con:operation><con:request name="setDebugOutputPath"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://383509-vm-java:8080/axis2/services/FedoraDigitalRepositoryImplTestSvc.FedoraDigitalRepositoryImplTestSvcHttpSoap12Endpoint/</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:fed="http://fedora.impl.ral.uhi.ac.uk">
+   <soap:Header/>
+   <soap:Body>
+      <fed:setDebugOutputPath>
+         <!--Optional:-->
+         <fed:debugOutputPath>${#TestCase#debugOptPath}</fed:debugOutputPath>
+      </fed:setDebugOutputPath>
+   </soap:Body>
+</soap:Envelope>]]></con:request><con:wsaConfig action="urn:setDebugOutputPath" mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties><con:property><con:name>debugOptPath</con:name><con:value>C:\apache-tomcat-5.5.28\logs</con:value></con:property></con:properties></con:testCase><con:testCase failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="setFedoraDigitalRepositoryImpl TestCase" searchProperties="true" id="498e0bcb-effb-4121-b8c8-30abfb5458f9"><con:settings/><con:testStep type="request" name="setFedoraDigitalRepositoryImpl" id="30adc5b6-91e6-4e9e-908b-fedd6e758fc3"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>FedoraDigitalRepositoryImplTestSvcSoap12Binding</con:interface><con:operation>setFedoraDigitalRepositoryImpl</con:operation><con:request name="setFedoraDigitalRepositoryImpl"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://383509-vm-java:8080/axis2/services/FedoraDigitalRepositoryImplTestSvc.FedoraDigitalRepositoryImplTestSvcHttpSoap12Endpoint/</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:fed="http://fedora.impl.ral.uhi.ac.uk" xmlns:xsd="http://fedora.impl.ral.uhi.ac.uk/xsd" xmlns:xsd1="http://util.java/xsd">
+   <soap:Header/>
+   <soap:Body>
+      <fed:setFedoraDigitalRepositoryImpl>
+         <!--Optional:-->
+         <fed:repo>
+            <!--Optional:-->
+            <xsd:repoConfig>
+               <!--Optional:-->
+               <xsd1:keys/>
+               <!--Optional:-->
+               <xsd1:locale>
+                  <!--Optional:-->
+                  <xsd1:ISO3Country>?</xsd1:ISO3Country>
+                  <!--Optional:-->
+                  <xsd1:ISO3Language>?</xsd1:ISO3Language>
+                  <!--Optional:-->
+                  <xsd1:country>?</xsd1:country>
+                  <!--Optional:-->
+                  <xsd1:displayCountry>?</xsd1:displayCountry>
+                  <!--Optional:-->
+                  <xsd1:displayLanguage>?</xsd1:displayLanguage>
+                  <!--Optional:-->
+                  <xsd1:displayName>?</xsd1:displayName>
+                  <!--Optional:-->
+                  <xsd1:displayVariant>?</xsd1:displayVariant>
+                  <!--Optional:-->
+                  <xsd1:language>?</xsd1:language>
+                  <!--Optional:-->
+                  <xsd1:variant>?</xsd1:variant>
+               </xsd1:locale>
+               <!--Optional:-->
+               <xsd1:keys/>
+            </xsd:repoConfig>
+         </fed:repo>
+      </fed:setFedoraDigitalRepositoryImpl>
+   </soap:Body>
+</soap:Envelope>]]></con:request><con:wsaConfig action="urn:setFedoraDigitalRepositoryImpl"/></con:request></con:config></con:testStep><con:properties/></con:testCase><con:testCase failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="setKeystorePassword TestCase" searchProperties="true" id="9aed8b52-d3b4-4f85-89bb-3eac51be150d"><con:settings/><con:testStep type="request" name="setKeystorePassword" id="42abd669-db3e-4341-a906-d19ec1589445"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>FedoraDigitalRepositoryImplTestSvcSoap12Binding</con:interface><con:operation>setKeystorePassword</con:operation><con:request name="setKeystorePassword"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://383509-vm-java:8080/axis2/services/FedoraDigitalRepositoryImplTestSvc.FedoraDigitalRepositoryImplTestSvcHttpSoap12Endpoint/</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:fed="http://fedora.impl.ral.uhi.ac.uk">
+   <soap:Header/>
+   <soap:Body>
+      <fed:setKeystorePassword>
+         <!--Optional:-->
+         <fed:keystorePassword>${#TestCase#keystorePassword}</fed:keystorePassword>
+      </fed:setKeystorePassword>
+   </soap:Body>
+</soap:Envelope>]]></con:request><con:wsaConfig action="urn:setKeystorePassword" mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties><con:property><con:name>keystorePassword</con:name><con:value xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/></con:property></con:properties></con:testCase><con:testCase failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="setKeystorePath TestCase" searchProperties="true" id="5cd69274-203c-4adb-abbb-0a63c59921ae"><con:settings/><con:testStep type="request" name="setKeystorePath" id="615f96c0-4e64-4bbb-b99c-c5a987fac94b"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>FedoraDigitalRepositoryImplTestSvcSoap12Binding</con:interface><con:operation>setKeystorePath</con:operation><con:request name="setKeystorePath"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://383509-vm-java:8080/axis2/services/FedoraDigitalRepositoryImplTestSvc.FedoraDigitalRepositoryImplTestSvcHttpSoap12Endpoint/</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:fed="http://fedora.impl.ral.uhi.ac.uk">
+   <soap:Header/>
+   <soap:Body>
+      <fed:setKeystorePath>
+         <!--Optional:-->
+         <fed:keystorePath>${#TestCase#keystorePath}</fed:keystorePath>
+      </fed:setKeystorePath>
+   </soap:Body>
+</soap:Envelope>]]></con:request><con:wsaConfig action="urn:setKeystorePath" mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties><con:property><con:name>keystorePath</con:name><con:value xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/></con:property></con:properties></con:testCase><con:testCase failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="setTruststorePassword TestCase" searchProperties="true" id="bc16ebf8-7933-4953-a5aa-91d2e535ed6d"><con:settings/><con:testStep type="request" name="setTruststorePassword" id="b10b4efb-4928-404b-b623-0b64d46beaed"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>FedoraDigitalRepositoryImplTestSvcSoap12Binding</con:interface><con:operation>setTruststorePassword</con:operation><con:request name="setTruststorePassword"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://383509-vm-java:8080/axis2/services/FedoraDigitalRepositoryImplTestSvc.FedoraDigitalRepositoryImplTestSvcHttpSoap12Endpoint/</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:fed="http://fedora.impl.ral.uhi.ac.uk">
+   <soap:Header/>
+   <soap:Body>
+      <fed:setTruststorePassword>
+         <!--Optional:-->
+         <fed:truststorePassword>${#TestCase#truststorePassword}</fed:truststorePassword>
+      </fed:setTruststorePassword>
+   </soap:Body>
+</soap:Envelope>]]></con:request><con:wsaConfig action="urn:setTruststorePassword" mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties><con:property><con:name>truststorePassword</con:name><con:value xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/></con:property></con:properties></con:testCase><con:testCase failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="setTruststorePath TestCase" searchProperties="true" id="5370dab1-dc69-409c-99a0-d8df01839753"><con:settings/><con:testStep type="request" name="setTruststorePath" id="2a790c44-0067-4273-972a-6f6d1eb3e64f"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>FedoraDigitalRepositoryImplTestSvcSoap12Binding</con:interface><con:operation>setTruststorePath</con:operation><con:request name="setTruststorePath"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://383509-vm-java:8080/axis2/services/FedoraDigitalRepositoryImplTestSvc.FedoraDigitalRepositoryImplTestSvcHttpSoap12Endpoint/</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:fed="http://fedora.impl.ral.uhi.ac.uk">
+   <soap:Header/>
+   <soap:Body>
+      <fed:setTruststorePath>
+         <!--Optional:-->
+         <fed:truststorePath>${#TestCase#truststorePath}</fed:truststorePath>
+      </fed:setTruststorePath>
+   </soap:Body>
+</soap:Envelope>]]></con:request><con:wsaConfig action="urn:setTruststorePath" mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties><con:property><con:name>truststorePath</con:name><con:value xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/></con:property></con:properties></con:testCase><con:testCase failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="invokeTestHarnessMethod" searchProperties="true" id="1d87c35c-debc-4046-9d67-66826700e77b"><con:settings/><con:testStep type="request" name="invokeTestMethod"><con:settings/><con:config xsi:type="con:RequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:interface>FedoraDigitalRepositoryImplTestSvcSoap12Binding</con:interface><con:operation>invokeTestHarnessMethod</con:operation><con:request name="invokeTestMethod"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://383509-vm-java:8080/axis2/services/FedoraDigitalRepositoryImplTestSvc.FedoraDigitalRepositoryImplTestSvcHttpSoap12Endpoint/</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:fed="http://fedora.impl.ral.uhi.ac.uk">
+   <soap:Header/>
+   <soap:Body>
+      <fed:invokeTestHarnessMethod>
+         <!--Optional:-->
+         <fed:testMethodName>${#TestCase#methodName}</fed:testMethodName>
+      </fed:invokeTestHarnessMethod>
+   </soap:Body>
+</soap:Envelope>]]></con:request><con:assertion type="SOAP Response"/><con:wsaConfig mustUnderstand="NONE" version="200508"/><con:wsrmConfig version="1.2"/></con:request></con:config></con:testStep><con:properties><con:property><con:name>methodName</con:name><con:value>createAndFindFolder</con:value></con:property></con:properties></con:testCase><con:properties/></con:testSuite><con:properties/><con:wssContainer/></con:soapui-project>
